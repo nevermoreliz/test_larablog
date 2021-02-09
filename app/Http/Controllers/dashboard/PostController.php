@@ -84,6 +84,7 @@ class PostController extends Controller
     {
         //
         // dd($post->image->image);
+        // /ahras
         $categories = Category::pluck('id', 'title');
 
         return view('dashboard.post.edit', ['post' => $post, 'categories' => $categories]);
