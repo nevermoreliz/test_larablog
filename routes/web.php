@@ -26,12 +26,18 @@ Route::get('/', function () {
 
 // Route::get('post', [App\Http\Controllers\PostController::class, 'index']);
 
+// post
 Route::resource('dashboard/post', App\Http\Controllers\dashboard\PostController::class);
-
 Route::post('dashboard/post/{post}/image', [App\Http\Controllers\dashboard\PostController::class, 'image'])->name('post.image');
 
+// categorias
 Route::resource('dashboard/category', App\Http\Controllers\dashboard\CategoryController::class);
 
+// autenticacion
 Auth::routes();
 
+// otros
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// usuarios
+Route::resource('dashboard/user', App\Http\Controllers\dashboard\UserController::class);
