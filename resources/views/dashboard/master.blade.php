@@ -23,11 +23,8 @@
             @yield('content')
         </div>
     </section>
-    <script src="{{ mix('js/app.js') }}"></script>
 
-
-
-
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 
 </html>
