@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
 
 // nueva ruta para laravel 8
 // antes
@@ -41,3 +41,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // usuarios
 Route::resource('dashboard/user', App\Http\Controllers\dashboard\UserController::class);
+
+Route::get('/', [App\Http\Controllers\web\WebController::class, 'index'])->name('index');
+
+
+Route::get('/detail/{id}', [App\Http\Controllers\web\WebController::class, 'detail']);
+Route::get('/post-category/{id}', [App\Http\Controllers\web\WebController::class, 'post_category']);
+
+// listado de categorias paginado
+Route::get('/categories', [App\Http\Controllers\web\WebController::class, 'index'])->name('index');
+
+// seccion de contacto
+Route::get('/contact', [App\Http\Controllers\web\WebController::class, 'contact']);

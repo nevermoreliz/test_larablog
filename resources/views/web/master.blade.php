@@ -13,17 +13,18 @@
 
 <body>
 
-    <header>
-        @include('dashboard.partials.nav-header-main')
-    </header>
-
-    <section>
-        <div class="container">
+    <div id="app">
+        <header>
+            @include('web.partials.nav-header-main')
+        </header>
+        <div class="container mb-3 mt-3" id="app">
             @include('dashboard.partials.session-flash-status')
             @yield('content')
         </div>
-    </section>
-
+        <footer>
+            @include('web.partials.footer-main')
+        </footer>
+    </div>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 
